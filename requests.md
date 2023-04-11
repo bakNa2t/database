@@ -1,33 +1,33 @@
 ## Basic MySQL requests:
 ___
- - __SELECT * FROM <table_name>;__ -- *выводит все поля и все строки;*
- - __SELECT id FROM <table_name>;__ -- *выводит только **id** пользователей;*
- - __SELECT name FROM <table_name>;__ -- *выводит только **name** пользователей;*
- - __SELECT email FROM <table_name>;__ -- *выводит только **email** пользователей;*
- - __SELECT name, email FROM <table_name>;__ -- *выводит **name** и **email** пользователей;*
- - __SELECT id, name, email, created_on  FROM <table_name>;__ -- *выводит **id**, **name**, **email** и **created_on** пользователей;*
- - __SELECT * FROM <table_name> WHERE password = '0000';__ -- *выводит пользователей, где password = 0000;*
- - __SELECT * FROM <table_name> WHERE created_on = 'YEAR-MM-DD 00:00:00';__ -- *выводит пользователей, которые были созданы YEAR-MM-DD 00:00:00;*
- - __SELECT * FROM <table_name> WHERE name LIKE '%Smith%';__ -- *выводит пользователей, где в **name** есть слово **Smith**;*
- - __SELECT * FROM <table_name> WHERE name LIKE '%1';__ -- *выводит пользователей, где в **name** в конце есть **1**;*
- - __SELECT * FROM <table_name> WHERE name LIKE '%a%';__ -- *выводит пользователей, где в **name** в есть буква 'а';*
- - __SELECT * FROM <table_name> WHERE created_on = 'YEAR-MM-DD 00:00:00';__ -- *выводит пользователей, которые были созданы (**created_on**) YEAR-MM-DD 00:00:00;*
- - __SELECT * FROM <table_name> WHERE created_on = 'YEAR-MM-DD 00:00:00' AND password='0000';__ -- *выводит пользователей, которые были созданы (**created_on**) YEAR-MM-DD 00:00:00 и имеют **password** = 0000;*
- - __SELECT * FROM <table_name> WHERE created_on = 'YEAR-MM-DD 00:00:00' AND name LIKE '%request%';__ -- *выводит пользователей, которые были созданы (**created_on**) YEAR-MM-DD 00:00:00 и у которых в **name** есть слово **request**;*
- - __SELECT * FROM <table_name> WHERE created_on = 'YEAR-MM-DD 00:00:00' AND name LIKE '%0%';__ -- *выводит пользователей, которые были созданы (**created_on**) YEAR-MM-DD 00:00:00 и у которых в **name** есть цифра 0;*
- - __SELECT * FROM <table_name> WHERE id = 110;__ -- *выводит пользователя, у которых **id** равен 110;*
- - __SELECT * FROM <table_name> WHERE id = 153;__ -- *выводит пользователя, у которых **id** равен 153;*
- - __SELECT * FROM <table_name> WHERE id > 140;__ -- *выводит пользователя, у которых **id** больше 140;*
- - __SELECT * FROM <table_name> WHERE id < 130;__ -- *выводит пользователя, у которых **id** меньше 130;*
- - __SELECT * FROM <table_name> WHERE id < 127 OR id > 188;__ -- *выводит пользователя, у которых **id** меньше 127 или больше 188;*
- - __SELECT * FROM <table_name> WHERE id <= 137;__ -- *выводит пользователя, у которых **id** меньше либо равно 137;*
- - __SELECT * FROM <able_name> WHERE id >= 137;__ -- *выводит пользователя, у которых **id** больше либо равно 137;*
-- __SELECT * FROM <table_name> WHERE id > 180 AND id < 190;__ -- *выводит пользователя, у которых **id** больше 180, но меньше 190;*
-- __SELECT * FROM <table_name> WHERE id BETWEEN 180 AND 190;__ -- *выводит пользователя, у которых **id** между 180 и 190;*
-- __SELECT * FROM <table_name> WHERE password IN ('0000', 'start1', '\_hello');__ -- *выводит пользователей, где **password** равен 0000, start1, _hello;*
-- __SELECT * FROM <table_name> WHERE created_on IN ('YEAR-MM-DD 00:00:00','YEAR-MM-DD 12:00:00','YEAR-MM-DD 24:00:00');__ -- *выводит пользователей, где **created_on** равен YEAR-MM-DD 00:00:00, YEAR-MM-DD 12:00:00, YEAR-MM-DD 24:00:00;*
-- __SELECT MAX(id) FROM <table_name>;__ -- *выводит максимальный **id**;* 
-- __SELECT MIN(id) FROM <table_name>;__ -- *выводит минимальный **id**;* 
-- __SELECT COUNT(*) FROM <table_name>\;__ -- *выводит **count** (количество) пользователей;*
-- __SELECT id, name, created_on FROM <table_name> ORDER BY created_on;__ -- *выводит **id** пользователя, **name**, **created_on** (дату создания пользователя) и сортирует по порядку возрастания **created_on** (даты добавления пользователя);*
-- __SELECT id, name, created_on FROM <table_name> ORDER BY created_on DESC;__ -- *выводит **id** пользователя, **name**, **created_on** (дату создания пользователя) и сортирует по порядку убывания **created_on** (даты добавления пользователя).*
+ - `SELECT * FROM <table_name>;` -- *выводит все поля и все строки;*
+ - `SELECT id FROM <table_name>;` -- *выводит только **id** пользователей;*
+ - `SELECT name FROM <table_name>;` -- *выводит только **name** пользователей;*
+ - `SELECT email FROM <table_name>;` -- *выводит только **email** пользователей;*
+ - `SELECT name, email FROM <table_name>;` -- *выводит **name** и **email** пользователей;*
+ - `SELECT id, name, email, created_on  FROM <table_name>;` -- *выводит **id**, **name**, **email** и **created_on** пользователей;*
+ - `SELECT * FROM <table_name> WHERE password = '0000';` -- *выводит пользователей, где password = 0000;*
+ - `SELECT * FROM <table_name> WHERE created_on = 'YEAR-MM-DD 00:00:00';` -- *выводит пользователей, которые были созданы YEAR-MM-DD 00:00:00;*
+ - `SELECT * FROM <table_name> WHERE name LIKE '%Smith%';` -- *выводит пользователей, где в **name** есть слово **Smith**;*
+ - `SELECT * FROM <table_name> WHERE name LIKE '%1';` -- *выводит пользователей, где в **name** в конце есть **1**;*
+ - `SELECT * FROM <table_name> WHERE name LIKE '%a%';` -- *выводит пользователей, где в **name** в есть буква 'а';*
+ - `SELECT * FROM <table_name> WHERE created_on = 'YEAR-MM-DD 00:00:00';` -- *выводит пользователей, которые были созданы (**created_on**) YEAR-MM-DD 00:00:00;*
+ - `SELECT * FROM <table_name> WHERE created_on = 'YEAR-MM-DD 00:00:00' AND password='0000'` -- *выводит пользователей, которые были созданы (**created_on**) YEAR-MM-DD 00:00:00 и имеют **password** = 0000;*
+ - `SELECT * FROM <table_name> WHERE created_on = 'YEAR-MM-DD 00:00:00' AND name LIKE '%request%';` -- *выводит пользователей, которые были созданы (**created_on**) YEAR-MM-DD 00:00:00 и у которых в **name** есть слово **request**;*
+ - `SELECT * FROM <table_name> WHERE created_on = 'YEAR-MM-DD 00:00:00' AND name LIKE '%0%';` -- *выводит пользователей, которые были созданы (**created_on**) YEAR-MM-DD 00:00:00 и у которых в **name** есть цифра 0;*
+ - `SELECT * FROM <table_name> WHERE id = 110;` -- *выводит пользователя, у которых **id** равен 110;*
+ - `SELECT * FROM <table_name> WHERE id = 153;` -- *выводит пользователя, у которых **id** равен 153;*
+ - `SELECT * FROM <table_name> WHERE id > 140;` -- *выводит пользователя, у которых **id** больше 140;*
+ - `SELECT * FROM <table_name> WHERE id < 130;` -- *выводит пользователя, у которых **id** меньше 130;*
+ - `SELECT * FROM <table_name> WHERE id < 127 OR id > 188;` -- *выводит пользователя, у которых **id** меньше 127 или больше 188;*
+ - `SELECT * FROM <table_name> WHERE id <= 137;` -- *выводит пользователя, у которых **id** меньше либо равно 137;*
+ - `SELECT * FROM <able_name> WHERE id >= 137;` -- *выводит пользователя, у которых **id** больше либо равно 137;*
+- `SELECT * FROM <table_name> WHERE id > 180 AND id < 190;` -- *выводит пользователя, у которых **id** больше 180, но меньше 190;*
+- `SELECT * FROM <table_name> WHERE id BETWEEN 180 AND 190;` -- *выводит пользователя, у которых **id** между 180 и 190;*
+- `SELECT * FROM <table_name> WHERE password IN ('0000', 'start1', '\_hello');` -- *выводит пользователей, где **password** равен 0000, start1, _hello;*
+- `SELECT * FROM <table_name> WHERE created_on IN ('YEAR-MM-DD 00:00:00','YEAR-MM-DD 12:00:00','YEAR-MM-DD 24:00:00');` -- *выводит пользователей, где **created_on** равен YEAR-MM-DD 00:00:00, YEAR-MM-DD 12:00:00, YEAR-MM-DD 24:00:00;*
+- `SELECT MAX(id) FROM <table_name>;` -- *выводит максимальный **id**;* 
+- `SELECT MIN(id) FROM <table_name>;` -- *выводит минимальный **id**;* 
+- `SELECT COUNT(*) FROM <table_name>\;` -- *выводит **count** (количество) пользователей;*
+- `SELECT id, name, created_on FROM <table_name> ORDER BY created_on;` -- *выводит **id** пользователя, **name**, **created_on** (дату создания пользователя) и сортирует по порядку возрастания **created_on** (даты добавления пользователя);*
+- `SELECT id, name, created_on FROM <table_name> ORDER BY created_on DESC;` -- *выводит **id** пользователя, **name**, **created_on** (дату создания пользователя) и сортирует по порядку убывания **created_on** (даты добавления пользователя).*
