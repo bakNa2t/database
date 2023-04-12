@@ -1,6 +1,6 @@
 ## Basic MySQL requests:
 ___
- - `SELECT * FROM <table_name>;` -- *выводит все поля и все строки;*
+ - `SELECT * FROM <table_name>;` -- *выводит все поля и все строки таблицы **<table_name>**;*
  - `SELECT id FROM <table_name>;` -- *выводит только **id** пользователей;*
  - `SELECT name FROM <table_name>;` -- *выводит только **name** пользователей;*
  - `SELECT email FROM <table_name>;` -- *выводит только **email** пользователей;*
