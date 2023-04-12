@@ -1,33 +1,71 @@
 ## Basic MySQL requests:
 ___
- - `SELECT * FROM <table_name>;` -- *выводит все поля и все строки таблицы **<table_name>**;*
- - `SELECT id FROM <table_name>;` -- *выводит только **id** пользователей;*
- - `SELECT name FROM <table_name>;` -- *выводит только **name** пользователей;*
- - `SELECT email FROM <table_name>;` -- *выводит только **email** пользователей;*
- - `SELECT name, email FROM <table_name>;` -- *выводит **name** и **email** пользователей;*
- - `SELECT id, name, email, created_on  FROM <table_name>;` -- *выводит **id**, **name**, **email** и **created_on** пользователей;*
- - `SELECT * FROM <table_name> WHERE password = '0000';` -- *выводит пользователей, где password = 0000;*
- - `SELECT * FROM <table_name> WHERE created_on = 'YEAR-MM-DD 00:00:00';` -- *выводит пользователей, которые были созданы YEAR-MM-DD 00:00:00;*
- - `SELECT * FROM <table_name> WHERE name LIKE '%Smith%';` -- *выводит пользователей, где в **name** есть слово **Smith**;*
- - `SELECT * FROM <table_name> WHERE name LIKE '%1';` -- *выводит пользователей, где в **name** в конце есть **1**;*
- - `SELECT * FROM <table_name> WHERE name LIKE '%a%';` -- *выводит пользователей, где в **name** в есть буква 'а';*
- - `SELECT * FROM <table_name> WHERE created_on = 'YEAR-MM-DD 00:00:00';` -- *выводит пользователей, которые были созданы (**created_on**) YEAR-MM-DD 00:00:00;*
- - `SELECT * FROM <table_name> WHERE created_on = 'YEAR-MM-DD 00:00:00' AND password='0000'` -- *выводит пользователей, которые были созданы (**created_on**) YEAR-MM-DD 00:00:00 и имеют **password** = 0000;*
- - `SELECT * FROM <table_name> WHERE created_on = 'YEAR-MM-DD 00:00:00' AND name LIKE '%request%';` -- *выводит пользователей, которые были созданы (**created_on**) YEAR-MM-DD 00:00:00 и у которых в **name** есть слово **request**;*
- - `SELECT * FROM <table_name> WHERE created_on = 'YEAR-MM-DD 00:00:00' AND name LIKE '%0%';` -- *выводит пользователей, которые были созданы (**created_on**) YEAR-MM-DD 00:00:00 и у которых в **name** есть цифра 0;*
- - `SELECT * FROM <table_name> WHERE id = 110;` -- *выводит пользователя, у которых **id** равен 110;*
- - `SELECT * FROM <table_name> WHERE id = 153;` -- *выводит пользователя, у которых **id** равен 153;*
- - `SELECT * FROM <table_name> WHERE id > 140;` -- *выводит пользователя, у которых **id** больше 140;*
- - `SELECT * FROM <table_name> WHERE id < 130;` -- *выводит пользователя, у которых **id** меньше 130;*
- - `SELECT * FROM <table_name> WHERE id < 127 OR id > 188;` -- *выводит пользователя, у которых **id** меньше 127 или больше 188;*
- - `SELECT * FROM <table_name> WHERE id <= 137;` -- *выводит пользователя, у которых **id** меньше либо равно 137;*
- - `SELECT * FROM <able_name> WHERE id >= 137;` -- *выводит пользователя, у которых **id** больше либо равно 137;*
-- `SELECT * FROM <table_name> WHERE id > 180 AND id < 190;` -- *выводит пользователя, у которых **id** больше 180, но меньше 190;*
-- `SELECT * FROM <table_name> WHERE id BETWEEN 180 AND 190;` -- *выводит пользователя, у которых **id** между 180 и 190;*
-- `SELECT * FROM <table_name> WHERE password IN ('0000', 'start1', '\_hello');` -- *выводит пользователей, где **password** равен 0000, start1, _hello;*
-- `SELECT * FROM <table_name> WHERE created_on IN ('YEAR-MM-DD 00:00:00','YEAR-MM-DD 12:00:00','YEAR-MM-DD 24:00:00');` -- *выводит пользователей, где **created_on** равен YEAR-MM-DD 00:00:00, YEAR-MM-DD 12:00:00, YEAR-MM-DD 24:00:00;*
-- `SELECT MAX(id) FROM <table_name>;` -- *выводит максимальный **id**;* 
-- `SELECT MIN(id) FROM <table_name>;` -- *выводит минимальный **id**;* 
-- `SELECT COUNT(*) FROM <table_name>\;` -- *выводит **count** (количество) пользователей;*
-- `SELECT id, name, created_on FROM <table_name> ORDER BY created_on;` -- *выводит **id** пользователя, **name**, **created_on** (дату создания пользователя) и сортирует по порядку возрастания **created_on** (даты добавления пользователя);*
-- `SELECT id, name, created_on FROM <table_name> ORDER BY created_on DESC;` -- *выводит **id** пользователя, **name**, **created_on** (дату создания пользователя) и сортирует по порядку убывания **created_on** (даты добавления пользователя).*
+ - `SHOW DATABASES;`
+ ------------ *отображает доступные базы данных;* 
+ - `SHOW TABLES;`
+ ------------ *выводит список таблиц в текущей базе данных;*
+ - `USE <database_name>;`
+ ------------ *использовать данную базу данных;*
+ - `SELECT * FROM <table_name>;`
+ ------------ *выводит все поля и все строки таблицы **<table_name>**;*
+ - `SELECT id FROM <table_name>;`
+ ------------ *выводит только **id** из таблицы **<table_name>**;*
+ - `SELECT name FROM <table_name>;`
+ ------------ *выводит только **name** из таблицы **<table_name>**;*
+ - `SELECT email FROM <table_name>;`
+ ------------ *выводит только **email** из таблицы **<table_name>**;*
+ - `SELECT name, email FROM <table_name>;`
+ ------------ *выводит **name** и **email** из таблицы **<table_name>**;*
+ - `SELECT id, name, email, created_on FROM <table_name>;`
+ ------------ *выводит **id**, **name**, **email** и **created_on** из таблицы **<table_name>**;*
+ - `SELECT * FROM <table_name> WHERE password = '0000';`
+ ------------ *выводит все поля из таблицы **<table_name>**, где password = 0000;*
+ - `SELECT * FROM <table_name> WHERE created_on = 'YEAR-MM-DD 00:00:00';`
+ ------------ *выводит все поля из таблицы **<table_name>**, которые были созданы в указанную дату (YEAR-MM-DD 00:00:00);*
+ - `SELECT * FROM <table_name> WHERE name LIKE '%match%';`
+ ------------ *выводит все поля из таблицы **<table_name>**, где в **name** есть совпадение **match**;*
+ - `SELECT * FROM <table_name> WHERE name LIKE '%es';`
+ ------------ *выводит все поля из таблицы **<table_name>**, где в **name** в конце есть совпадение **es**;*
+ - `SELECT * FROM <table_name> WHERE name LIKE 'a%';`
+ ------------ *выводит все поля из таблицы **<table_name>**, где в **name** в начале литера **'а'**;*
+ - `SELECT * FROM <table_name> WHERE created_on = 'YEAR-MM-DD 00:00:00';`
+ ------------ *выводит все поля из таблицы **<table_name>**, которые были созданы в указанную дату (YEAR-MM-DD 00:00:00);*
+ - `SELECT * FROM <table_name> WHERE created_on = 'YEAR-MM-DD 00:00:00' AND password='0000'`
+ ------------ *выводит все поля из таблицы **<table_name>**, которые были созданы указанную дату (YEAR-MM-DD 00:00:00) и имеют **password** = 0000;*
+ - `SELECT * FROM <table_name> WHERE created_on = 'YEAR-MM-DD 00:00:00' AND name LIKE '%request%';`
+ ------------ *выводит все поля из таблицы **<table_name>**, которые были созданы (YEAR-MM-DD 00:00:00) и у которых в **name** есть совпадение **request**;*
+ - `SELECT * FROM <table_name> WHERE created_on = 'YEAR-MM-DD 00:00:00' AND name LIKE '%0%';`
+ ------------ *выводит все поля из таблицы **<table_name>**, которые были созданы (YEAR-MM-DD 00:00:00) и у которых в **name** есть цифра **0**;*
+ - `SELECT * FROM <table_name> WHERE id = 9;`
+ ----------- *выводит все поля из таблицы **<table_name>**, у которых **id** равен **9**;*
+ - `SELECT * FROM <table_name> WHERE id > 1;`
+ ----------- *выводит все поля из таблицы **<table_name>**, у которых **id** больше **1**;*
+ - `SELECT * FROM <table_name> WHERE id < 10;`
+ ----------- *выводит все поля из таблицы **<table_name>**, у которых **id** меньше **10**;*
+ - `SELECT * FROM <table_name> WHERE id < 3 OR id > 6;`
+ ----------- *выводит все поля из таблицы **<table_name>**, у которых **id** меньше **3** или больше **6**;*
+ - `SELECT * FROM <table_name> WHERE id <= 5;`
+ ----------- *выводит поля из таблицы **<table_name>**, у которых **id** меньше либо равно **5**;*
+ - `SELECT * FROM <able_name> WHERE id >= 7;`
+ ----------- *выводит поля из таблицы **<table_name>**, у которых **id** больше либо равно **7**;*
+- `SELECT * FROM <table_name> WHERE id > 4 AND id < 8;`
+------------ *выводит поля из таблицы **<table_name>**, у которых **id** больше **4**, но меньше **8**;*
+- `SELECT * FROM <table_name> WHERE id BETWEEN 1 AND 9;`
+------------ *выводит поля из таблицы **<table_name>**, у которых **id** между **1** и **9**;*
+- `SELECT * FROM <table_name> WHERE password IN ('0000', 'start1', '_hello');`
+ ----------- *выводит поля из таблицы **<table_name>**, где **password** равен **0000**, **'start1'**, **'_hello'**;*
+- `SELECT * FROM <table_name> WHERE created_on IN ('YEAR-MM-DD 00:00:00','YEAR-MM-DD 12:00:00','YEAR-MM-DD 24:00:00');`
+------------ *выводит поля из таблицы **<table_name>**, где **created_on** равен указанным датам **(YEAR-MM-DD 00:00:00, YEAR-MM-DD 12:00:00, YEAR-MM-DD 24:00:00)**;*
+- `SELECT MAX(id) FROM <table_name>;`
+------------ *выводит максимальный **id** из таблицы **<table_name>**;* 
+- `SELECT MIN(id) FROM <table_name>;`
+------------ *выводит минимальный **id** из таблицы **<table_name>**;* 
+- `SELECT COUNT(*) FROM <table_name>\;` -- *выводит **count** (количество) всех полей из таблицы **<table_name>**;*
+- `SELECT id, name, created_on FROM <table_name> ORDER BY created_on;`
+------------ *выводит **id**, **name**, **created_on**из таблицы **<table_name>** и сортирует по порядку возрастания **created_on**;*
+- `SELECT id, name, created_on FROM <table_name> ORDER BY created_on DESC;`
+------------ *выводит **id**, **name**, **created_on**из таблицы **<table_name>** и сортирует по порядку убывания **created_on**.*
+- `SELECT name FROM <table_name1> LEFT JOIN <table_name2> ON <table_name1>.name = <table_name2>.name;`
+------------ *возвращает все записи **name** из левой таблицы (**<table_name1>**) и соответствующие записи **name** из правой таблицы (**<table_name2>**). Результат равен 0 записей **name** из **<table_name2>**, если совпадений нет;*
+- `SELECT name FROM <table_name1> RIGHT JOIN <table_name2> ON <table_name1>.name = <table_name2>.name;`
+------------ *возвращает все записи **name** из правой таблицы (**<table_name2>**) и соответствующие записи **name** из левой таблицы (**<table_name1>**). Результат равен 0 записей **name** из **<table_name1>**, если совпадений нет;*
