@@ -157,5 +157,5 @@ ___
     ```sql
     SELECT name FROM table_name1 
                 RIGHT JOIN table_name2
-                ON <table_name1>.name = <table_name2>.name;
+                ON table_name1.name = table_name2.name;
     ```
