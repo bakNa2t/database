@@ -6,5 +6,5 @@ Inside the link, you can see several requests which helps you to work with datab
 ---
 
 <p align="center">
-    <a href="https://bakna2t.github.io/database/blob/main/requests.md" target="_blank"><img src="./sql.png" style="width:40%;"></a>
+    <a href="https://github.com/bakNa2t/database/blob/main/requests.md"><img src="./sql.png" style="width:40%;"></a>
 </p>
